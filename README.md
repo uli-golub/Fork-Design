@@ -33,16 +33,16 @@ Then open http://localhost:3000 for the guide and `/examples/feed` for the scree
 
 > Build a page at `app/examples/<name>` using only `@/components/ui` and `@/components/fork`. Follow AGENTS.md.
 
-**In another project (Lovable, v0, a new Next app):** once this repo is deployed (for example on Vercel), install everything with one command:
+**In another project (Lovable, v0, a new Next app):** install everything with one command. The live guide is at https://fork-design.vercel.app.
 
 ```bash
-npx shadcn@latest add https://<your-deployment>/r/fork.json
+npx shadcn@latest add https://fork-design.vercel.app/r/fork.json
 ```
 
 Or install just the tokens:
 
 ```bash
-npx shadcn@latest add https://<your-deployment>/r/fork-theme.json
+npx shadcn@latest add https://fork-design.vercel.app/r/fork-theme.json
 ```
 
 Then copy `DESIGN.md` and `AGENTS.md` into that project so its AI follows the same rules. Tools that support DESIGN.md (like Google Stitch) can import the file directly.
