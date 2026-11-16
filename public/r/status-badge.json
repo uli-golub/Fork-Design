@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "status-badge",
+  "title": "Status Badge",
+  "description": "Fork agent pattern: status-badge.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/fork/status-badge.tsx",
+      "content": "import * as React from \"react\"\nimport { Check } from \"lucide-react\"\n\nimport { Badge, BadgeDot } from \"@/components/ui/badge\"\n\n/**\n * Agent status vocabulary. Grays for everything Fork handles on its own,\n * the orange tint only for things that are live, done, or waiting on the user.\n */\nexport type AgentStatus =\n  | \"running\"\n  | \"scheduled\"\n  | \"paused\"\n  | \"needs-approval\"\n  | \"live\"\n  | \"done\"\n  | \"active\"\n  | \"failed\"\n\nconst config: Record<\n  AgentStatus,\n  {\n    label: string\n    variant: \"default\" | \"brand\" | \"destructive\"\n    tone?: \"brand\" | \"ink\" | \"muted\" | \"destructive\"\n    check?: boolean\n  }\n> = {\n  running: { label: \"Running\", variant: \"default\", tone: \"ink\" },\n  scheduled: { label: \"Scheduled\", variant: \"default\", tone: \"muted\" },\n  paused: { label: \"Paused\", variant: \"default\", tone: \"muted\" },\n  \"needs-approval\": { label: \"Needs approval\", variant: \"brand\", tone: \"brand\" },\n  live: { label: \"Live\", variant: \"brand\", tone: \"brand\" },\n  active: { label: \"Active\", variant: \"brand\", tone: \"brand\" },\n  done: { label: \"Done\", variant: \"brand\", check: true },\n  failed: { label: \"Failed\", variant: \"destructive\", tone: \"destructive\" },\n}\n\nfunction StatusBadge({\n  status,\n  children,\n  ...props\n}: Omit<React.ComponentProps<typeof Badge>, \"variant\"> & {\n  status: AgentStatus\n}) {\n  const c = config[status]\n  return (\n    <Badge variant={c.variant} {...props}>\n      {c.check ? <Check /> : <BadgeDot tone={c.tone} />}\n      {children ?? c.label}\n    </Badge>\n  )\n}\n\nexport { StatusBadge }\n",
+      "type": "registry:component",
+      "target": "components/fork/status-badge.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,784 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "fork",
+  "homepage": "https://github.com/uli-golub/Fork-Design",
+  "items": [
+    {
+      "name": "fork-theme",
+      "type": "registry:theme",
+      "title": "Fork theme",
+      "description": "Fork tokens: warm grays, ink, and #FA4F20 as the single accent. Light and dark.",
+      "cssVars": {
+        "theme": {
+          "radius": "0.625rem",
+          "font-sans": "var(--font-sans)",
+          "font-mono": "var(--font-mono)",
+          "color-brand": "var(--brand)",
+          "color-brand-foreground": "var(--brand-foreground)",
+          "color-brand-tint": "var(--brand-tint)",
+          "color-brand-line": "var(--brand-line)",
+          "color-surface-subtle": "var(--surface-subtle)",
+          "color-border-subtle": "var(--border-subtle)",
+          "color-skeleton": "var(--skeleton)",
+          "radius-sm": "6px",
+          "radius-md": "8px",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "12px",
+          "radius-2xl": "16px",
+          "shadow-float": "0 12px 32px rgb(20 20 20 / 0.1), 0 2px 6px rgb(20 20 20 / 0.06)"
+        },
+        "light": {
+          "background": "#f1f1ee",
+          "foreground": "#141414",
+          "card": "#fafaf9",
+          "card-foreground": "#141414",
+          "popover": "#fafaf9",
+          "popover-foreground": "#141414",
+          "primary": "#141414",
+          "primary-foreground": "#fafaf9",
+          "secondary": "#f3f3f1",
+          "secondary-foreground": "#141414",
+          "muted": "#f3f3f1",
+          "muted-foreground": "#666663",
+          "accent": "#ebebe7",
+          "accent-foreground": "#141414",
+          "destructive": "#b42318",
+          "border": "#e2e2de",
+          "input": "#e2e2de",
+          "ring": "#141414",
+          "brand": "#fa4f20",
+          "brand-foreground": "#ffffff",
+          "brand-tint": "#fef1ec",
+          "brand-line": "#fbcdbd",
+          "surface-subtle": "#f3f3f1",
+          "border-subtle": "#e8e8e4",
+          "skeleton": "#e0e0dd",
+          "chart-1": "#141414",
+          "chart-2": "#fa4f20",
+          "chart-3": "#666663",
+          "chart-4": "#a3a39e",
+          "chart-5": "#d4d4cf",
+          "sidebar": "#fafaf9",
+          "sidebar-foreground": "#141414",
+          "sidebar-primary": "#141414",
+          "sidebar-primary-foreground": "#fafaf9",
+          "sidebar-accent": "#ebebe7",
+          "sidebar-accent-foreground": "#141414",
+          "sidebar-border": "#e2e2de",
+          "sidebar-ring": "#141414"
+        },
+        "dark": {
+          "background": "#121211",
+          "foreground": "#f1f1ee",
+          "card": "#1a1a19",
+          "card-foreground": "#f1f1ee",
+          "popover": "#1f1f1e",
+          "popover-foreground": "#f1f1ee",
+          "primary": "#f1f1ee",
+          "primary-foreground": "#141414",
+          "secondary": "#222220",
+          "secondary-foreground": "#f1f1ee",
+          "muted": "#222220",
+          "muted-foreground": "#a3a39e",
+          "accent": "#2a2a27",
+          "accent-foreground": "#f1f1ee",
+          "destructive": "#f28b7e",
+          "border": "#2c2c29",
+          "input": "#34342f",
+          "ring": "#f1f1ee",
+          "brand": "#fa4f20",
+          "brand-foreground": "#ffffff",
+          "brand-tint": "#2a1a14",
+          "brand-line": "#5a2a1a",
+          "surface-subtle": "#222220",
+          "border-subtle": "#262623",
+          "skeleton": "#2e2e2b",
+          "chart-1": "#f1f1ee",
+          "chart-2": "#fa4f20",
+          "chart-3": "#a3a39e",
+          "chart-4": "#666663",
+          "chart-5": "#3a3a37",
+          "sidebar": "#1a1a19",
+          "sidebar-foreground": "#f1f1ee",
+          "sidebar-primary": "#f1f1ee",
+          "sidebar-primary-foreground": "#141414",
+          "sidebar-accent": "#2a2a27",
+          "sidebar-accent-foreground": "#f1f1ee",
+          "sidebar-border": "#2c2c29",
+          "sidebar-ring": "#f1f1ee"
+        }
+      }
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Fork-styled shadcn button.",
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Fork-styled shadcn card.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Fork-styled shadcn badge.",
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Fork-styled shadcn switch.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Fork-styled shadcn input.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Fork-styled shadcn tabs.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Fork-styled shadcn textarea.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Fork-styled shadcn select.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Fork-styled shadcn dropdown-menu.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Fork-styled shadcn popover.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Fork-styled shadcn dialog.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Fork-styled shadcn sheet.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Fork-styled shadcn checkbox.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Fork-styled shadcn progress.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Fork-styled shadcn skeleton.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "logo",
+      "type": "registry:component",
+      "title": "Logo",
+      "description": "Fork agent pattern: logo.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/fork/logo.tsx",
+          "type": "registry:component",
+          "target": "components/fork/logo.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-badge",
+      "type": "registry:component",
+      "title": "Status Badge",
+      "description": "Fork agent pattern: status-badge.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/fork/status-badge.tsx",
+          "type": "registry:component",
+          "target": "components/fork/status-badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "task-list",
+      "type": "registry:component",
+      "title": "Task List",
+      "description": "Fork agent pattern: task-list.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/fork/task-list.tsx",
+          "type": "registry:component",
+          "target": "components/fork/task-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "automation-row",
+      "type": "registry:component",
+      "title": "Automation Row",
+      "description": "Fork agent pattern: automation-row.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/fork/automation-row.tsx",
+          "type": "registry:component",
+          "target": "components/fork/automation-row.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feed-item",
+      "type": "registry:component",
+      "title": "Feed Item",
+      "description": "Fork agent pattern: feed-item.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/fork/feed-item.tsx",
+          "type": "registry:component",
+          "target": "components/fork/feed-item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:component",
+      "title": "Stat Card",
+      "description": "Fork agent pattern: stat-card.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/fork/stat-card.tsx",
+          "type": "registry:component",
+          "target": "components/fork/stat-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "site-card",
+      "type": "registry:component",
+      "title": "Site Card",
+      "description": "Fork agent pattern: site-card.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/fork/site-card.tsx",
+          "type": "registry:component",
+          "target": "components/fork/site-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "approval-card",
+      "type": "registry:component",
+      "title": "Approval Card",
+      "description": "Fork agent pattern: approval-card.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/fork/approval-card.tsx",
+          "type": "registry:component",
+          "target": "components/fork/approval-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "composer",
+      "type": "registry:component",
+      "title": "Composer",
+      "description": "Fork agent pattern: composer.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/fork/composer.tsx",
+          "type": "registry:component",
+          "target": "components/fork/composer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agent-panel",
+      "type": "registry:component",
+      "title": "Agent Panel",
+      "description": "Fork agent pattern: agent-panel.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/fork/agent-panel.tsx",
+          "type": "registry:component",
+          "target": "components/fork/agent-panel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "app-shell",
+      "type": "registry:component",
+      "title": "App Shell",
+      "description": "Fork agent pattern: app-shell.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/fork/app-shell.tsx",
+          "type": "registry:component",
+          "target": "components/fork/app-shell.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theme-toggle",
+      "type": "registry:component",
+      "title": "Theme Toggle",
+      "description": "Fork agent pattern: theme-toggle.",
+      "dependencies": [
+        "lucide-react",
+        "next-themes"
+      ],
+      "files": [
+        {
+          "path": "components/fork/theme-toggle.tsx",
+          "type": "registry:component",
+          "target": "components/fork/theme-toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fork",
+      "type": "registry:block",
+      "title": "Fork design system (everything)",
+      "description": "One install: Fork theme tokens, all restyled shadcn components and every Fork agent pattern.",
+      "dependencies": [
+        "class-variance-authority",
+        "clsx",
+        "lucide-react",
+        "next-themes",
+        "radix-ui",
+        "sonner",
+        "tailwind-merge",
+        "tw-animate-css"
+      ],
+      "cssVars": {
+        "theme": {
+          "radius": "0.625rem",
+          "font-sans": "var(--font-sans)",
+          "font-mono": "var(--font-mono)",
+          "color-brand": "var(--brand)",
+          "color-brand-foreground": "var(--brand-foreground)",
+          "color-brand-tint": "var(--brand-tint)",
+          "color-brand-line": "var(--brand-line)",
+          "color-surface-subtle": "var(--surface-subtle)",
+          "color-border-subtle": "var(--border-subtle)",
+          "color-skeleton": "var(--skeleton)",
+          "radius-sm": "6px",
+          "radius-md": "8px",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "12px",
+          "radius-2xl": "16px",
+          "shadow-float": "0 12px 32px rgb(20 20 20 / 0.1), 0 2px 6px rgb(20 20 20 / 0.06)"
+        },
+        "light": {
+          "background": "#f1f1ee",
+          "foreground": "#141414",
+          "card": "#fafaf9",
+          "card-foreground": "#141414",
+          "popover": "#fafaf9",
+          "popover-foreground": "#141414",
+          "primary": "#141414",
+          "primary-foreground": "#fafaf9",
+          "secondary": "#f3f3f1",
+          "secondary-foreground": "#141414",
+          "muted": "#f3f3f1",
+          "muted-foreground": "#666663",
+          "accent": "#ebebe7",
+          "accent-foreground": "#141414",
+          "destructive": "#b42318",
+          "border": "#e2e2de",
+          "input": "#e2e2de",
+          "ring": "#141414",
+          "brand": "#fa4f20",
+          "brand-foreground": "#ffffff",
+          "brand-tint": "#fef1ec",
+          "brand-line": "#fbcdbd",
+          "surface-subtle": "#f3f3f1",
+          "border-subtle": "#e8e8e4",
+          "skeleton": "#e0e0dd",
+          "chart-1": "#141414",
+          "chart-2": "#fa4f20",
+          "chart-3": "#666663",
+          "chart-4": "#a3a39e",
+          "chart-5": "#d4d4cf",
+          "sidebar": "#fafaf9",
+          "sidebar-foreground": "#141414",
+          "sidebar-primary": "#141414",
+          "sidebar-primary-foreground": "#fafaf9",
+          "sidebar-accent": "#ebebe7",
+          "sidebar-accent-foreground": "#141414",
+          "sidebar-border": "#e2e2de",
+          "sidebar-ring": "#141414"
+        },
+        "dark": {
+          "background": "#121211",
+          "foreground": "#f1f1ee",
+          "card": "#1a1a19",
+          "card-foreground": "#f1f1ee",
+          "popover": "#1f1f1e",
+          "popover-foreground": "#f1f1ee",
+          "primary": "#f1f1ee",
+          "primary-foreground": "#141414",
+          "secondary": "#222220",
+          "secondary-foreground": "#f1f1ee",
+          "muted": "#222220",
+          "muted-foreground": "#a3a39e",
+          "accent": "#2a2a27",
+          "accent-foreground": "#f1f1ee",
+          "destructive": "#f28b7e",
+          "border": "#2c2c29",
+          "input": "#34342f",
+          "ring": "#f1f1ee",
+          "brand": "#fa4f20",
+          "brand-foreground": "#ffffff",
+          "brand-tint": "#2a1a14",
+          "brand-line": "#5a2a1a",
+          "surface-subtle": "#222220",
+          "border-subtle": "#262623",
+          "skeleton": "#2e2e2b",
+          "chart-1": "#f1f1ee",
+          "chart-2": "#fa4f20",
+          "chart-3": "#a3a39e",
+          "chart-4": "#666663",
+          "chart-5": "#3a3a37",
+          "sidebar": "#1a1a19",
+          "sidebar-foreground": "#f1f1ee",
+          "sidebar-primary": "#f1f1ee",
+          "sidebar-primary-foreground": "#141414",
+          "sidebar-accent": "#2a2a27",
+          "sidebar-accent-foreground": "#f1f1ee",
+          "sidebar-border": "#2c2c29",
+          "sidebar-ring": "#f1f1ee"
+        }
+      },
+      "files": [
+        {
+          "path": "components/ui/button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/badge.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/switch.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/input.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/tabs.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/textarea.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/select.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/popover.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/dialog.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/sheet.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/progress.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/fork/logo.tsx",
+          "type": "registry:component",
+          "target": "components/fork/logo.tsx"
+        },
+        {
+          "path": "components/fork/status-badge.tsx",
+          "type": "registry:component",
+          "target": "components/fork/status-badge.tsx"
+        },
+        {
+          "path": "components/fork/task-list.tsx",
+          "type": "registry:component",
+          "target": "components/fork/task-list.tsx"
+        },
+        {
+          "path": "components/fork/automation-row.tsx",
+          "type": "registry:component",
+          "target": "components/fork/automation-row.tsx"
+        },
+        {
+          "path": "components/fork/feed-item.tsx",
+          "type": "registry:component",
+          "target": "components/fork/feed-item.tsx"
+        },
+        {
+          "path": "components/fork/stat-card.tsx",
+          "type": "registry:component",
+          "target": "components/fork/stat-card.tsx"
+        },
+        {
+          "path": "components/fork/site-card.tsx",
+          "type": "registry:component",
+          "target": "components/fork/site-card.tsx"
+        },
+        {
+          "path": "components/fork/approval-card.tsx",
+          "type": "registry:component",
+          "target": "components/fork/approval-card.tsx"
+        },
+        {
+          "path": "components/fork/composer.tsx",
+          "type": "registry:component",
+          "target": "components/fork/composer.tsx"
+        },
+        {
+          "path": "components/fork/agent-panel.tsx",
+          "type": "registry:component",
+          "target": "components/fork/agent-panel.tsx"
+        },
+        {
+          "path": "components/fork/app-shell.tsx",
+          "type": "registry:component",
+          "target": "components/fork/app-shell.tsx"
+        },
+        {
+          "path": "components/fork/theme-toggle.tsx",
+          "type": "registry:component",
+          "target": "components/fork/theme-toggle.tsx"
+        },
+        {
+          "path": "components/fork/index.ts",
+          "type": "registry:component",
+          "target": "components/fork/index.ts"
+        },
+        {
+          "path": "components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-toggle",
+  "title": "Theme Toggle",
+  "description": "Fork agent pattern: theme-toggle.",
+  "dependencies": [
+    "lucide-react",
+    "next-themes"
+  ],
+  "files": [
+    {
+      "path": "components/fork/theme-toggle.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { useTheme } from \"next-themes\"\n\nimport { Tabs, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\n\n/** Light / Dark segmented switch (also: press \"d\"). */\nfunction ThemeToggle() {\n  const { resolvedTheme, setTheme } = useTheme()\n  // true on the client, false during SSR — avoids a hydration mismatch\n  const mounted = React.useSyncExternalStore(\n    () => () => {},\n    () => true,\n    () => false\n  )\n  return (\n    <Tabs value={mounted ? resolvedTheme : \"light\"} onValueChange={setTheme}>\n      <TabsList aria-label=\"Color theme\">\n        <TabsTrigger value=\"light\">Light</TabsTrigger>\n        <TabsTrigger value=\"dark\">Dark</TabsTrigger>\n      </TabsList>\n    </Tabs>\n  )\n}\n\nexport { ThemeToggle }\n",
+      "type": "registry:component",
+      "target": "components/fork/theme-toggle.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

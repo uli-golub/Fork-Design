@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "task-list",
+  "title": "Task List",
+  "description": "Fork agent pattern: task-list.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/fork/task-list.tsx",
+      "content": "import * as React from \"react\"\nimport { Check } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\n\n/**\n * TaskList / TaskRow — the agent's suggestions for a site.\n * Each row: a state marker, title + one-line meta, and ONE trailing action.\n * Markers: \"pending\" ink dot, \"approval\" orange dot, \"done\" orange check.\n */\ntype TaskState = \"pending\" | \"approval\" | \"done\"\n\nfunction TaskList({ className, ...props }: React.ComponentProps<\"ul\">) {\n  return (\n    <ul\n      data-slot=\"task-list\"\n      className={cn(\"flex flex-col divide-y divide-border-subtle\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction TaskMarker({ state }: { state: TaskState }) {\n  if (state === \"done\") {\n    return (\n      <span className=\"grid size-5 shrink-0 place-items-center rounded-full bg-brand text-brand-foreground\">\n        <Check className=\"size-3\" strokeWidth={3} aria-hidden=\"true\" />\n      </span>\n    )\n  }\n  return (\n    <span className=\"grid size-5 shrink-0 place-items-center\" aria-hidden=\"true\">\n      <span\n        className={cn(\n          \"size-1.5 rounded-full\",\n          state === \"approval\" ? \"bg-brand\" : \"bg-foreground\"\n        )}\n      />\n    </span>\n  )\n}\n\nfunction TaskRow({\n  state = \"pending\",\n  title,\n  meta,\n  action,\n  className,\n  ...props\n}: Omit<React.ComponentProps<\"li\">, \"title\"> & {\n  state?: TaskState\n  title: React.ReactNode\n  meta?: React.ReactNode\n  action?: React.ReactNode\n}) {\n  return (\n    <li\n      data-slot=\"task-row\"\n      data-state={state}\n      className={cn(\"flex items-center gap-3 py-3 first:pt-0 last:pb-0\", className)}\n      {...props}\n    >\n      <TaskMarker state={state} />\n      <div className=\"min-w-0 flex-1\">\n        <div className=\"truncate font-medium\">{title}</div>\n        {meta && <div className=\"truncate text-[13px] text-muted-foreground\">{meta}</div>}\n      </div>\n      {action && <div className=\"flex shrink-0 items-center gap-2\">{action}</div>}\n    </li>\n  )\n}\n\nexport { TaskList, TaskRow, type TaskState }\n",
+      "type": "registry:component",
+      "target": "components/fork/task-list.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,182 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Fork design tokens.
+ * Source of truth: DESIGN.md. Names follow shadcn so every shadcn
+ * component and AI coding tool understands them. Fork adds:
+ *   brand / brand-foreground / brand-tint / brand-line  — the single accent (#FA4F20)
+ *   surface-subtle / border-subtle / skeleton            — warm gray helpers
+ * Rule: grays and ink do the work. Brand orange only marks things that are
+ * on, approved, live, or waiting on the user. Never orange text on light bg.
+ */
+
+:root {
+  --radius: 0.625rem; /* 10px — buttons, inputs */
+
+  --background: #f1f1ee; /* page */
+  --foreground: #141414; /* ink */
+  --card: #fafaf9;
+  --card-foreground: #141414;
+  --popover: #fafaf9;
+  --popover-foreground: #141414;
+
+  --primary: #141414;
+  --primary-foreground: #fafaf9;
+  --secondary: #f3f3f1;
+  --secondary-foreground: #141414;
+  --muted: #f3f3f1;
+  --muted-foreground: #666663;
+  --accent: #ebebe7; /* hover / selected row */
+  --accent-foreground: #141414;
+  --destructive: #b42318;
+
+  --border: #e2e2de;
+  --input: #e2e2de;
+  --ring: #141414;
+
+  --brand: #fa4f20;
+  --brand-foreground: #ffffff;
+  --brand-tint: #fef1ec;
+  --brand-line: #fbcdbd;
+
+  --surface-subtle: #f3f3f1;
+  --border-subtle: #e8e8e4;
+  --skeleton: #e0e0dd;
+
+  --chart-1: #141414;
+  --chart-2: #fa4f20;
+  --chart-3: #666663;
+  --chart-4: #a3a39e;
+  --chart-5: #d4d4cf;
+
+  --sidebar: #fafaf9;
+  --sidebar-foreground: #141414;
+  --sidebar-primary: #141414;
+  --sidebar-primary-foreground: #fafaf9;
+  --sidebar-accent: #ebebe7;
+  --sidebar-accent-foreground: #141414;
+  --sidebar-border: #e2e2de;
+  --sidebar-ring: #141414;
+
+  --shadow-float: 0 12px 32px rgb(20 20 20 / 0.1), 0 2px 6px rgb(20 20 20 / 0.06);
+}
+
+.dark {
+  --background: #121211;
+  --foreground: #f1f1ee;
+  --card: #1a1a19;
+  --card-foreground: #f1f1ee;
+  --popover: #1f1f1e;
+  --popover-foreground: #f1f1ee;
+
+  --primary: #f1f1ee;
+  --primary-foreground: #141414;
+  --secondary: #222220;
+  --secondary-foreground: #f1f1ee;
+  --muted: #222220;
+  --muted-foreground: #a3a39e;
+  --accent: #2a2a27;
+  --accent-foreground: #f1f1ee;
+  --destructive: #f28b7e;
+
+  --border: #2c2c29;
+  --input: #34342f;
+  --ring: #f1f1ee;
+
+  --brand: #fa4f20;
+  --brand-foreground: #ffffff;
+  --brand-tint: #2a1a14;
+  --brand-line: #5a2a1a;
+
+  --surface-subtle: #222220;
+  --border-subtle: #262623;
+  --skeleton: #2e2e2b;
+
+  --chart-1: #f1f1ee;
+  --chart-2: #fa4f20;
+  --chart-3: #a3a39e;
+  --chart-4: #666663;
+  --chart-5: #3a3a37;
+
+  --sidebar: #1a1a19;
+  --sidebar-foreground: #f1f1ee;
+  --sidebar-primary: #f1f1ee;
+  --sidebar-primary-foreground: #141414;
+  --sidebar-accent: #2a2a27;
+  --sidebar-accent-foreground: #f1f1ee;
+  --sidebar-border: #2c2c29;
+  --sidebar-ring: #f1f1ee;
+
+  --shadow-float: 0 12px 32px rgb(0 0 0 / 0.5), 0 2px 6px rgb(0 0 0 / 0.4);
+}
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-tint: var(--brand-tint);
+  --color-brand-line: var(--brand-line);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-border-subtle: var(--border-subtle);
+  --color-skeleton: var(--skeleton);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Fork radius scale: badge 6 · control 10 · float 12 · card 16 */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: var(--radius);
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 20px;
+  --radius-4xl: 9999px;
+
+  --shadow-float: var(--shadow-float);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

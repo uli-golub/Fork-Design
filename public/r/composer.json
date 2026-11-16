@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "composer",
+  "title": "Composer",
+  "description": "Fork agent pattern: composer.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/fork/composer.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { ArrowUp, Plus } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/components/ui/button\"\n\n/** Chat input for talking to the Fork agent. Ink send button, never orange. */\nfunction Composer({\n  placeholder = \"Ask Fork to make changes\",\n  onSubmit,\n  className,\n}: {\n  placeholder?: string\n  onSubmit?: (value: string) => void\n  className?: string\n}) {\n  const [value, setValue] = React.useState(\"\")\n  return (\n    <form\n      data-slot=\"composer\"\n      onSubmit={(e) => {\n        e.preventDefault()\n        if (!value.trim()) return\n        onSubmit?.(value.trim())\n        setValue(\"\")\n      }}\n      className={cn(\n        \"flex flex-col gap-2 rounded-2xl border border-border bg-card p-2 pl-3 transition-colors focus-within:border-ring\",\n        className\n      )}\n    >\n      <textarea\n        aria-label=\"Message Fork\"\n        rows={1}\n        value={value}\n        onChange={(e) => setValue(e.target.value)}\n        onKeyDown={(e) => {\n          if (e.key === \"Enter\" && !e.shiftKey) {\n            e.preventDefault()\n            e.currentTarget.form?.requestSubmit()\n          }\n        }}\n        placeholder={placeholder}\n        className=\"field-sizing-content max-h-40 min-h-9 resize-none bg-transparent pt-1.5 text-sm outline-none placeholder:text-muted-foreground\"\n      />\n      <div className=\"flex items-center justify-between\">\n        <Button type=\"button\" variant=\"ghost\" size=\"icon-sm\" aria-label=\"Add attachment\">\n          <Plus />\n        </Button>\n        <Button\n          type=\"submit\"\n          size=\"icon-sm\"\n          className=\"rounded-full\"\n          aria-label=\"Send\"\n          disabled={!value.trim()}\n        >\n          <ArrowUp />\n        </Button>\n      </div>\n    </form>\n  )\n}\n\nexport { Composer }\n",
+      "type": "registry:component",
+      "target": "components/fork/composer.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

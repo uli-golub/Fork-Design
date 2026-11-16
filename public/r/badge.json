@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "Badge",
+  "description": "Fork-styled shadcn badge.",
+  "dependencies": [
+    "class-variance-authority",
+    "radix-ui"
+  ],
+  "files": [
+    {
+      "path": "components/ui/badge.tsx",
+      "content": "import * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { cn } from \"@/lib/utils\"\nimport { Slot } from \"radix-ui\"\n\n/**\n * Fork badge: 6px radius, 12px medium text.\n *   default  gray chip — tags, counts, neutral status (SEO, Paused, Running)\n *   brand    orange tint — Live, Done, Needs approval, Active\n *   solid    ink — plan labels (Pro)\n *   outline  hairline only\n *   destructive  red text — Failed\n * Pair status badges with a <BadgeDot /> for color, never color the text orange.\n */\nconst badgeVariants = cva(\n  \"group/badge inline-flex h-6 w-fit shrink-0 items-center justify-center gap-1.5 overflow-hidden rounded-sm border px-2 text-xs font-medium whitespace-nowrap transition-colors focus-visible:ring-3 focus-visible:ring-ring/30 [&>svg]:pointer-events-none [&>svg]:size-3.5\",\n  {\n    variants: {\n      variant: {\n        default: \"border-border-subtle bg-surface-subtle text-muted-foreground\",\n        secondary: \"border-border-subtle bg-surface-subtle text-foreground\",\n        brand: \"border-brand-line bg-brand-tint text-foreground [&>svg]:text-brand\",\n        solid: \"border-primary bg-primary text-primary-foreground\",\n        outline: \"border-border text-foreground\",\n        destructive: \"border-border-subtle bg-surface-subtle text-destructive\",\n        ghost: \"border-transparent text-muted-foreground hover:bg-accent\",\n        link: \"border-transparent text-foreground underline-offset-4 hover:underline\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n)\n\nfunction Badge({\n  className,\n  variant = \"default\",\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"span\"> &\n  VariantProps<typeof badgeVariants> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot.Root : \"span\"\n\n  return (\n    <Comp\n      data-slot=\"badge\"\n      data-variant={variant}\n      className={cn(badgeVariants({ variant }), className)}\n      {...props}\n    />\n  )\n}\n\nconst dotVariants = cva(\"inline-block size-1.5 shrink-0 rounded-full\", {\n  variants: {\n    tone: {\n      brand: \"bg-brand\",\n      ink: \"bg-foreground\",\n      muted: \"bg-muted-foreground\",\n      destructive: \"bg-destructive\",\n    },\n  },\n  defaultVariants: { tone: \"ink\" },\n})\n\nfunction BadgeDot({\n  className,\n  tone,\n  ...props\n}: React.ComponentProps<\"span\"> & VariantProps<typeof dotVariants>) {\n  return (\n    <span\n      data-slot=\"badge-dot\"\n      aria-hidden=\"true\"\n      className={cn(dotVariants({ tone }), className)}\n      {...props}\n    />\n  )\n}\n\nexport { Badge, BadgeDot, badgeVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feed-item",
+  "title": "Feed Item",
+  "description": "Fork agent pattern: feed-item.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/fork/feed-item.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\n/**\n * FeedItem — one entry in the agent feed (Muse-inspired):\n * a quiet icon tile, a title with a timestamp, one or two lines of body,\n * optional media and actions. Flat rows, separated by hairlines — not cards.\n */\nfunction Feed({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"feed\"\n      className={cn(\"flex flex-col divide-y divide-border-subtle\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction FeedItem({\n  icon,\n  title,\n  time,\n  menu,\n  children,\n  media,\n  actions,\n  className,\n  ...props\n}: Omit<React.ComponentProps<\"article\">, \"title\"> & {\n  icon?: React.ReactNode\n  title: React.ReactNode\n  time?: React.ReactNode\n  menu?: React.ReactNode\n  media?: React.ReactNode\n  actions?: React.ReactNode\n}) {\n  return (\n    <article\n      data-slot=\"feed-item\"\n      className={cn(\"flex gap-3 py-4 first:pt-0 last:pb-0\", className)}\n      {...props}\n    >\n      {icon && (\n        <span className=\"grid size-9 shrink-0 place-items-center rounded-lg border border-border-subtle bg-surface-subtle text-foreground [&_svg]:size-4\">\n          {icon}\n        </span>\n      )}\n      <div className=\"flex min-w-0 flex-1 flex-col gap-1\">\n        <div className=\"flex items-start justify-between gap-3\">\n          <h3 className=\"font-semibold\">{title}</h3>\n          <div className=\"flex shrink-0 items-center gap-1 text-xs text-muted-foreground\">\n            {time}\n            {menu}\n          </div>\n        </div>\n        {children && <div className=\"text-muted-foreground\">{children}</div>}\n        {media && <div className=\"mt-2 overflow-hidden rounded-xl border border-border-subtle\">{media}</div>}\n        {actions && <div className=\"mt-3 flex items-center gap-2\">{actions}</div>}\n      </div>\n    </article>\n  )\n}\n\nexport { Feed, FeedItem }\n",
+      "type": "registry:component",
+      "target": "components/fork/feed-item.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

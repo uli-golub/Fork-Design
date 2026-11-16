@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "site-card",
+  "title": "Site Card",
+  "description": "Fork agent pattern: site-card.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/fork/site-card.tsx",
+      "content": "import * as React from \"react\"\nimport { Image as ImageIcon, MoreHorizontal } from \"lucide-react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport {\n  Card,\n  CardAction,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\"\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\"\nimport { StatusBadge } from \"@/components/fork/status-badge\"\n\n/** Site tile from the Sites grid: preview, name, URL, two actions bottom-right. */\nfunction SiteCard({\n  name,\n  url,\n  edited,\n  preview,\n  live,\n}: {\n  name: string\n  url: string\n  edited?: string\n  preview?: React.ReactNode\n  live?: boolean\n}) {\n  return (\n    <Card className=\"gap-0 pt-0\">\n      <div className=\"grid h-36 place-items-center border-b border-border bg-surface-subtle text-muted-foreground\">\n        {preview ?? <ImageIcon className=\"size-6\" aria-hidden=\"true\" />}\n      </div>\n      <CardHeader className=\"pt-5\">\n        <CardTitle>{name}</CardTitle>\n        <CardDescription>\n          {url}\n          {edited && <> · edited {edited}</>}\n        </CardDescription>\n        <CardAction className=\"flex items-center gap-1\">\n          {live && <StatusBadge status=\"live\" />}\n          <DropdownMenu>\n            <DropdownMenuTrigger asChild>\n              <Button variant=\"ghost\" size=\"icon-sm\" aria-label={`More options for ${name}`}>\n                <MoreHorizontal />\n              </Button>\n            </DropdownMenuTrigger>\n            <DropdownMenuContent align=\"end\" className=\"w-44\">\n              <DropdownMenuItem>Rename</DropdownMenuItem>\n              <DropdownMenuItem>Duplicate</DropdownMenuItem>\n              <DropdownMenuSeparator />\n              <DropdownMenuItem variant=\"destructive\">Delete site</DropdownMenuItem>\n            </DropdownMenuContent>\n          </DropdownMenu>\n        </CardAction>\n      </CardHeader>\n      <CardFooter className=\"pt-5\">\n        <Button variant=\"outline\">Site dashboard</Button>\n        <Button>Open site</Button>\n      </CardFooter>\n    </Card>\n  )\n}\n\nexport { SiteCard }\n",
+      "type": "registry:component",
+      "target": "components/fork/site-card.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

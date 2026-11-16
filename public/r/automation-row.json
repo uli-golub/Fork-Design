@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "automation-row",
+  "title": "Automation Row",
+  "description": "Fork agent pattern: automation-row.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/fork/automation-row.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Switch } from \"@/components/ui/switch\"\n\n/** A recurring thing Fork does for the user, with an on/off switch. */\nfunction AutomationRow({\n  title,\n  schedule,\n  icon,\n  defaultChecked,\n  checked,\n  onCheckedChange,\n  className,\n  ...props\n}: Omit<React.ComponentProps<\"div\">, \"title\"> & {\n  title: React.ReactNode\n  schedule?: React.ReactNode\n  icon?: React.ReactNode\n  defaultChecked?: boolean\n  checked?: boolean\n  onCheckedChange?: (checked: boolean) => void\n}) {\n  const id = React.useId()\n  return (\n    <div\n      data-slot=\"automation-row\"\n      className={cn(\n        \"flex items-center gap-3 border-b border-border-subtle py-3 first:pt-0 last:border-b-0 last:pb-0\",\n        className\n      )}\n      {...props}\n    >\n      {icon && (\n        <span className=\"grid size-9 shrink-0 place-items-center rounded-lg border border-border-subtle bg-surface-subtle [&_svg]:size-4\">\n          {icon}\n        </span>\n      )}\n      <label htmlFor={id} className=\"min-w-0 flex-1 cursor-pointer\">\n        <div className=\"truncate font-medium\">{title}</div>\n        {schedule && (\n          <div className=\"truncate text-[13px] text-muted-foreground\">{schedule}</div>\n        )}\n      </label>\n      <Switch\n        id={id}\n        defaultChecked={defaultChecked}\n        checked={checked}\n        onCheckedChange={onCheckedChange}\n      />\n    </div>\n  )\n}\n\nexport { AutomationRow }\n",
+      "type": "registry:component",
+      "target": "components/fork/automation-row.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stat-card",
+  "title": "Stat Card",
+  "description": "Fork agent pattern: stat-card.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/fork/stat-card.tsx",
+      "content": "import * as React from \"react\"\nimport { TrendingDown, TrendingUp } from \"lucide-react\"\n\nimport { Badge } from \"@/components/ui/badge\"\nimport {\n  Card,\n  CardAction,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\"\n\n/** A single metric with an optional trend and sparkline (ink line, orange end dot). */\nfunction StatCard({\n  title,\n  period,\n  value,\n  change,\n  points,\n  className,\n}: {\n  title: string\n  period?: string\n  value: string\n  change?: number\n  points?: number[]\n  className?: string\n}) {\n  const up = (change ?? 0) >= 0\n  return (\n    <Card className={className}>\n      <CardHeader>\n        <CardTitle>{title}</CardTitle>\n        {period && <CardDescription>{period}</CardDescription>}\n        {change !== undefined && (\n          <CardAction>\n            <Badge variant={up ? \"brand\" : \"default\"}>\n              {up ? <TrendingUp /> : <TrendingDown />}\n              {Math.abs(change)}%\n            </Badge>\n          </CardAction>\n        )}\n      </CardHeader>\n      <CardContent>\n        <div className=\"text-[32px] leading-9 font-semibold tracking-[-0.03em]\">{value}</div>\n        {points && points.length > 1 && <Sparkline points={points} />}\n      </CardContent>\n    </Card>\n  )\n}\n\nfunction Sparkline({ points }: { points: number[] }) {\n  const w = 260\n  const h = 56\n  const pad = 6\n  const min = Math.min(...points)\n  const max = Math.max(...points)\n  const span = max - min || 1\n  const xy = points.map((p, i) => [\n    (i / (points.length - 1)) * (w - pad * 2) + pad,\n    h - pad - ((p - min) / span) * (h - pad * 2),\n  ])\n  const d = xy.map(([x, y], i) => `${i ? \"L\" : \"M\"}${x.toFixed(1)} ${y.toFixed(1)}`).join(\" \")\n  const [lx, ly] = xy[xy.length - 1]\n  return (\n    <svg viewBox={`0 0 ${w} ${h}`} className=\"h-14 w-full\" aria-hidden=\"true\">\n      <path d={d} fill=\"none\" stroke=\"var(--foreground)\" strokeWidth={1.75} strokeLinejoin=\"round\" />\n      <circle cx={lx} cy={ly} r={4} fill=\"var(--brand)\" />\n    </svg>\n  )\n}\n\nexport { StatCard, Sparkline }\n",
+      "type": "registry:component",
+      "target": "components/fork/stat-card.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

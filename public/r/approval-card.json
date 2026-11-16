@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "approval-card",
+  "title": "Approval Card",
+  "description": "Fork agent pattern: approval-card.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/fork/approval-card.tsx",
+      "content": "import * as React from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport {\n  Card,\n  CardAction,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\"\n\n/**\n * Something the agent prepared that needs a yes. This is the one place\n * a brand (orange) button belongs: the approve action.\n */\nfunction ApprovalCard({\n  title,\n  description,\n  aside,\n  children,\n  approveLabel = \"Approve\",\n  skipLabel = \"Skip\",\n  onApprove,\n  onSkip,\n}: {\n  title: React.ReactNode\n  description?: React.ReactNode\n  aside?: React.ReactNode\n  children?: React.ReactNode\n  approveLabel?: string\n  skipLabel?: string\n  onApprove?: () => void\n  onSkip?: () => void\n}) {\n  return (\n    <Card>\n      <CardHeader>\n        <CardTitle>{title}</CardTitle>\n        {description && <CardDescription>{description}</CardDescription>}\n        {aside && <CardAction>{aside}</CardAction>}\n      </CardHeader>\n      {children && <CardContent>{children}</CardContent>}\n      <CardFooter>\n        <Button variant=\"outline\" onClick={onSkip}>\n          {skipLabel}\n        </Button>\n        <Button variant=\"brand\" onClick={onApprove}>\n          {approveLabel}\n        </Button>\n      </CardFooter>\n    </Card>\n  )\n}\n\nexport { ApprovalCard }\n",
+      "type": "registry:component",
+      "target": "components/fork/approval-card.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

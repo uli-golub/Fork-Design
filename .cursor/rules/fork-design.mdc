@@ -1,0 +1,11 @@
+---
+description: Fork design system rules — apply to all UI work
+globs: ["**/*.tsx", "**/*.ts", "**/*.css"]
+alwaysApply: true
+---
+Follow AGENTS.md and DESIGN.md in the repo root. In short:
+- Use only components from @/components/ui and @/components/fork; never hand-roll buttons, cards, badges, inputs, tabs or menus.
+- Use only token classes (bg-card, text-muted-foreground, border-border, bg-brand …). No hex values, no gray-*/blue-* palette classes.
+- Brand orange (#FA4F20) only for on / approved / live / waiting-on-you; max one variant="brand" button per screen; never orange text.
+- Buttons are always 40px (no custom heights). Card actions sit bottom-right in CardFooter. Cards have no shadow.
+- Agent state uses <StatusBadge />. Must work in light and dark.
