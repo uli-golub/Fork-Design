@@ -292,9 +292,9 @@ Don't mix sharp and rounded corners in one view, and don't round single-sided bo
 
 Every component is a shadcn/ui component restyled through tokens. Import from `@/components/ui/*` and `@/components/fork/*`. Never hand-roll a button, card or badge.
 
-- **Buttons:** There is **one size, 40px tall** with a 10px radius, 16px side padding and 14px/500 text. Icon-only buttons are 40×40. The variants are:
-  - `default`: ink. The everyday strong action, such as Continue, Apply, Open site or Invite.
-  - `outline`: the default secondary action, such as Cancel, Review or Site dashboard.
+- **Buttons:** **Every button is black by default.** Use `default` (black, `#141414` with off-white text) for any action unless there's a specific reason for another variant. A button that stands alone is always black. In dark mode the same variant inverts to light ink (`#F1F1EE` with ink text) so it stays visible. There is **one size, 40px tall** with a 10px radius, 16px side padding and 14px/500 text. Icon-only buttons are 40×40. The variants are:
+  - `default`: black. The default for every button, such as Continue, Apply, Review, Open site, Tell me more or Run check.
+  - `outline`: only for the secondary action placed next to a black button, such as Cancel or Site dashboard. Never on its own.
   - `ghost`: low-emphasis actions such as Skip, Undo or Discuss.
   - `brand`: orange, for the single approve or main CTA. **Use at most one per screen.**
   - `destructive`: outlined, with red text.
@@ -329,7 +329,7 @@ These are the Fork-specific compositions in `components/fork`:
 - **ApprovalCard:** Something the agent prepared that needs a yes. This is the canonical home of the `brand` button.
 - **StatCard:** A metric card with an ink sparkline that ends in an orange dot, plus a trend badge.
 - **SiteCard:** A site tile with a preview, name, URL, a Live badge, a ⋯ menu, and "Site dashboard" and "Open site" at bottom-right.
-- **AgentPanel:** The 400px side panel. It has an icon tab group (Tasks, Analytics, Chat), an outline Upgrade button and the Composer.
+- **AgentPanel:** The 400px side panel. It has an icon tab group (Tasks, Analytics, Chat), a black Upgrade button and the Composer.
 - **Composer:** The chat input. It's a 16px-radius surface with a circular ink send button.
 - **AppShell / IconRail / PageHeader:** Page scaffolding.
 
@@ -338,12 +338,14 @@ Voice: the agent speaks in first person in the feed ("I can add a catering page"
 ## Do's and Don'ts
 
 - Do let grays and ink carry the page. Orange marks only on, approved, live or waiting-on-you states.
+- Do make every button black (`default`) unless it has a specific reason to be another variant.
 - Do use at most one `brand` button per screen.
 - Do keep every button 40px tall with a 10px radius. Never stretch buttons to fill a row unless it's a full-width mobile CTA.
 - Do put card actions bottom-right in `CardFooter`.
 - Do use `StatusBadge` for agent state instead of custom colors.
 - Do use rows separated by hairlines inside cards. Don't nest cards.
 - Do maintain WCAG AA (4.5:1 for normal text).
+- Don't use an outline button on its own. A lone action is black.
 - Don't put orange text on light backgrounds, or use orange for decoration.
 - Don't add new accent colors or new shades of orange. There is no secondary accent.
 - Don't add shadows to cards. Shadows are only for floating layers.

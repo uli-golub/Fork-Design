@@ -50,7 +50,7 @@ export default function AutomationsExample() {
         </CardContent>
       </Card>
       <div className="flex justify-end">
-        <Button variant="outline">Suggest a new automation</Button>
+        <Button>Suggest a new automation</Button>
       </div>
     </div>
   )

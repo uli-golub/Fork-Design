@@ -123,10 +123,10 @@ export default function FeedExample() {
             </CardHeader>
             <CardContent>
               <Feed>
-                <FeedItem icon={<Sparkles />} title="Add online gift cards" actions={<Button variant="outline">Tell me more</Button>}>
+                <FeedItem icon={<Sparkles />} title="Add online gift cards" actions={<Button>Tell me more</Button>}>
                   Holiday searches for &ldquo;bakery gift card&rdquo; are up 40%.
                 </FeedItem>
-                <FeedItem icon={<Sparkles />} title="Collect emails for weekly specials" actions={<Button variant="outline">Tell me more</Button>}>
+                <FeedItem icon={<Sparkles />} title="Collect emails for weekly specials" actions={<Button>Tell me more</Button>}>
                   A small sign-up at checkout. I&rsquo;ll write the first email.
                 </FeedItem>
               </Feed>

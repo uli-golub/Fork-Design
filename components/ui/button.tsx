@@ -6,9 +6,11 @@ import { Slot } from "radix-ui"
 /**
  * Fork button.
  * One size everywhere: 40px tall, 10px radius, 16px side padding, 14px medium.
+ * Every button is BLACK (variant="default") unless it has a reason not to be.
+ * In dark mode the same variant inverts to light ink so it stays visible.
  * Variants:
- *   default     ink — the everyday strong action
- *   outline     the default secondary action
+ *   default     black — the default for every button, including lone actions
+ *   outline     only the secondary action placed next to a black button (Cancel)
  *   ghost       low-emphasis actions (Skip, Undo)
  *   brand       #FA4F20 — approve or the single main CTA. Max one per screen.
  *   destructive outlined with red text

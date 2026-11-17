@@ -33,7 +33,7 @@ function AgentPanel({
             <PanelTab value="chat" label="Chat" icon={<MessageCircle />} />
           </TabsList>
           <div className="flex items-center gap-1">
-            <Button variant="outline">
+            <Button>
               <Sparkles />
               Upgrade
             </Button>

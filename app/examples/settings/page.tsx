@@ -125,7 +125,7 @@ export default function SettingsExample() {
                     <CardTitle>Site health</CardTitle>
                     <CardDescription>Last checked 2 hours ago.</CardDescription>
                     <CardAction>
-                      <Button variant="outline">Run check</Button>
+                      <Button>Run check</Button>
                     </CardAction>
                   </CardHeader>
                   <CardContent className="gap-0">
@@ -163,9 +163,9 @@ export default function SettingsExample() {
                 <p className="text-[13px] text-muted-foreground">In progress · 3</p>
               </div>
               <TaskList>
-                <TaskRow state="approval" title="Name the product in the button" meta="Needs your approval" action={<Button variant="outline">Review</Button>} />
+                <TaskRow state="approval" title="Name the product in the button" meta="Needs your approval" action={<Button>Review</Button>} />
                 <TaskRow title="Update the search title" meta="SEO · ready to apply" action={<Button>Apply</Button>} />
-                <TaskRow title="Move the product photo up" meta="Layout · ready to preview" action={<Button variant="outline">Preview</Button>} />
+                <TaskRow title="Move the product photo up" meta="Layout · ready to preview" action={<Button>Preview</Button>} />
                 <TaskRow state="done" title="Compress homepage images" meta="1.2s faster" />
               </TaskList>
             </div>

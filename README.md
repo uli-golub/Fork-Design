@@ -2,6 +2,8 @@
 
 The design system for **Fork**, the self-driving website platform. It's calm warm grays, ink text, and one orange accent (`#FA4F20`) used only where something is on, approved, live, or waiting on you.
 
+**Buttons are black by default.** A plain `<Button>` is black; other variants are used only for a reason (outline for the secondary next to it, brand to approve).
+
 It's built on **shadcn/ui** (Radix primitives, Vega style), **Tailwind CSS v4**, **Next.js** and **Geist**.
 
 | File | What it is |

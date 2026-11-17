@@ -213,7 +213,7 @@ export default function GuidePage() {
             </div>
           </Section>
 
-          <Section id="buttons" title="Buttons" lead="One size: 40px tall, 10px radius, 16px side padding, 14px medium. At most one brand button per screen.">
+          <Section id="buttons" title="Buttons" lead="Every button is black by default. Use another variant only for a reason: outline for the secondary action next to a black one, ghost for low emphasis, brand to approve. One size: 40px tall, 10px radius.">
             <Panel className="flex flex-col gap-5">
               <div className="flex flex-wrap items-center gap-3">
                 <Button>Continue</Button>
@@ -241,8 +241,8 @@ export default function GuidePage() {
                 <Button disabled>Disabled</Button>
               </div>
               <div className="flex flex-wrap gap-x-6 gap-y-1">
-                <Meta>default · ink</Meta>
-                <Meta>outline · secondary</Meta>
+                <Meta>default · black, use this first</Meta>
+                <Meta>outline · secondary, next to a black button</Meta>
                 <Meta>ghost · low emphasis</Meta>
                 <Meta>brand · approve or one main CTA</Meta>
                 <Meta>destructive</Meta>
@@ -388,7 +388,7 @@ export default function GuidePage() {
             <Panel className="flex flex-wrap items-center gap-3">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline">
+                  <Button>
                     <MoreHorizontal />
                     Open menu
                   </Button>
@@ -416,7 +416,7 @@ export default function GuidePage() {
 
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button variant="outline">Open dialog</Button>
+                  <Button>Open dialog</Button>
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
@@ -437,13 +437,12 @@ export default function GuidePage() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button variant="outline">Hover for tooltip</Button>
+                  <Button>Hover for tooltip</Button>
                 </TooltipTrigger>
                 <TooltipContent>Runs every Monday at 9am</TooltipContent>
               </Tooltip>
 
               <Button
-                variant="outline"
                 onClick={() =>
                   toast("Change applied", {
                     description: "Your homepage button now says Explore.",
@@ -480,7 +479,7 @@ export default function GuidePage() {
                   <div className="font-semibold">No suggestions yet</div>
                   <p className="mt-1 text-muted-foreground">Fork is scanning your site. New ideas show up here.</p>
                 </div>
-                <Button variant="outline">Run a scan now</Button>
+                <Button>Run a scan now</Button>
               </Panel>
             </div>
           </Section>
@@ -561,7 +560,7 @@ export default function GuidePage() {
                     <div className="font-semibold">Add another site</div>
                     <p className="mt-1 text-muted-foreground">Fork can run more than one website.</p>
                   </div>
-                  <Button variant="outline">New site</Button>
+                  <Button>New site</Button>
                 </CardContent>
               </Card>
             </div>
@@ -583,7 +582,7 @@ export default function GuidePage() {
                       state="approval"
                       title="Name the product in the button"
                       meta="Needs your approval"
-                      action={<Button variant="outline">Review</Button>}
+                      action={<Button>Review</Button>}
                     />
                     <TaskRow
                       title="Update the search title"
@@ -657,6 +656,7 @@ export default function GuidePage() {
                   <Check className="size-4" /> Do
                 </div>
                 <ul className="flex flex-col gap-2 text-muted-foreground">
+                  <li>Make every button black unless it has a reason not to be.</li>
                   <li>Let grays and ink carry the page.</li>
                   <li>Use one brand button per screen at most.</li>
                   <li>Keep every button 40px tall with a 10px radius.</li>
@@ -671,6 +671,7 @@ export default function GuidePage() {
                 <ul className="flex flex-col gap-2 text-muted-foreground">
                   <li>Add new accent colors or new shades of orange.</li>
                   <li>Put orange text on light backgrounds.</li>
+                  <li>Use an outline button on its own. A lone action is black.</li>
                   <li>Stretch buttons to fill a row.</li>
                   <li>Add shadows to cards that don&rsquo;t float.</li>
                   <li>Hard-code hex values in components.</li>
