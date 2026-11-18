@@ -1,23 +1,24 @@
 ---
 version: alpha
 name: Fork
-description: Calm, product-UI design system for Fork, the self-driving website platform. Warm off-white surfaces, ink text, and one orange accent (#FA4F20) used only where something is on, approved, live, or waiting on the user. Built on shadcn/ui (Radix, Vega spacing) and Geist.
+description: Calm, product-UI design system for Fork, the self-driving website platform. Neutral gray and white surfaces, ink text, and one orange accent (#FA4F20) used only where something is on, approved, live, or waiting on the user. Built on shadcn/ui (Radix, Vega spacing) and Geist.
 colors:
-  primary: "#141414"
-  on-primary: "#FAFAF9"
+  primary: "#111111"
+  on-primary: "#FFFFFF"
   brand: "#FA4F20"
   on-brand: "#FFFFFF"
   brand-tint: "#FEF1EC"
   brand-line: "#FBCDBD"
-  neutral: "#F1F1EE"
-  surface: "#FAFAF9"
-  on-surface: "#141414"
-  surface-subtle: "#F3F3F1"
-  surface-hover: "#EBEBE7"
-  on-surface-muted: "#666663"
-  skeleton: "#E0E0DD"
-  border: "#E2E2DE"
-  border-subtle: "#E8E8E4"
+  neutral: "#F0F0F0"
+  surface: "#FFFFFF"
+  sidebar: "#FAFAFA"
+  on-surface: "#111111"
+  surface-subtle: "#F5F5F5"
+  surface-hover: "#F5F5F5"
+  on-surface-muted: "#6A6A6A"
+  skeleton: "#E0E0E0"
+  border: "#E0E0E0"
+  border-subtle: "#F0F0F0"
   error: "#B42318"
   dark-neutral: "#121211"
   dark-surface: "#1A1A19"
@@ -218,7 +219,7 @@ components:
 Fork is a self-driving website platform for small business owners. They don't build, code or configure automations. They see what the Fork agent is doing, approve suggestions, and watch results. The interface must feel **playful, easy, approachable and light**, and above all **calm**: a quiet product surface where the agent's work is easy to scan.
 
 - **Agent-first.** The main surfaces are a feed of what Fork noticed and did, suggestions waiting for a yes, and automations already running. There is no automation builder.
-- **Calm by default.** Soft warm off-white surfaces and ink text do almost all the work. Contrast between surfaces is low; hierarchy comes from type weight, spacing and hairline borders.
+- **Calm by default.** Gray and white surfaces pair with ink text. Contrast between surfaces is low; hierarchy comes from type weight, spacing and hairline borders.
 - **Orange when it matters.** The one accent, Fork orange `#FA4F20`, appears only where something is **on, approved, live, or waiting on the user**. If a screen has nothing that needs attention, it may have no orange at all.
 - **Spacious, not dense.** Generous padding, one idea per row, short copy.
 - Light mode is the primary experience. Dark mode is fully supported with the same rules.
@@ -226,16 +227,17 @@ Fork is a self-driving website platform for small business owners. They don't bu
 
 ## Colors
 
-The palette is five families: warm page gray, near-white surfaces, hairline borders, ink, and one orange.
+The light palette comes from the approved swatches, with surface roles based on the Fork Sites screen. [Approved swatches](https://www.figma.com/design/CevnD3C7zlY0elTW64KhkZ/Fork-Design?node-id=11-2493) · [Fork Sites screen](https://www.figma.com/design/CevnD3C7zlY0elTW64KhkZ/Fork-Design?node-id=1-3)
 
-- **Page (#F1F1EE):** A warm light gray behind everything. shadcn `background`.
-- **Surface (#FAFAF9):** Cards, inputs, popovers and dialogs. shadcn `card` and `popover`.
-- **Subtle surface (#F3F3F1):** Chips, segmented-tab tracks, icon tiles. shadcn `muted` and `secondary`.
-- **Hover (#EBEBE7):** Hovered and selected rows and ghost buttons. shadcn `accent`. Note that shadcn's "accent" is a neutral hover color, not the brand.
-- **Hairlines (#E2E2DE, #E8E8E4):** `border` for card and control edges, `border-subtle` for dividers inside cards.
-- **Skeleton (#E0E0DD):** Loading bars and the off state of switches.
-- **Ink (#141414):** Headings, body text and primary buttons. shadcn `foreground` and `primary`.
-- **Muted ink (#666663):** Descriptions, metadata and placeholders. shadcn `muted-foreground`.
+- **Page (#F0F0F0)** is the light canvas behind the content. Use `background`.
+- **Surface (#FFFFFF)** is used on cards, inputs, popovers and dialogs through `card` and `popover`.
+- **Sidebar (#FAFAFA)** is the workspace navigation surface.
+- **Subtle surface (#F5F5F5)** is used on chips, segmented-tab tracks and icon tiles through `muted` and `secondary`.
+- **Hover (#F5F5F5)** is used on hovered and selected rows and ghost buttons through `accent`.
+- **Hairlines** use `border` (#E0E0E0) for card and control edges and `border-subtle` (#F0F0F0) for dividers inside cards.
+- **Skeleton (#E0E0E0)** is used for loading bars and the off state of switches.
+- **Ink (#111111)** is used for headings, body text and primary buttons through `foreground` and `primary`.
+- **Muted ink (#6A6A6A)** is used for descriptions, metadata and placeholders through `muted-foreground`.
 - **Fork orange (#FA4F20):** The only accent. It's used for switches that are on, done checks, live and needs-approval dots, progress, ratings, notification dots, and the single approve or main CTA button. It has a tint (#FEF1EC) and a line (#FBCDBD) for brand badges.
 - **Error (#B42318):** Destructive actions and validation text only. Never used as decoration.
 
@@ -271,7 +273,7 @@ The layout is built on a **4px grid**, mostly using 8, 12, 16, 24 and 40.
 
 ## Elevation & Depth
 
-Depth comes from **tonal layers and hairlines, not shadows**. The page is warm gray, cards are near-white with a 1px `border`, and nested elements use `surface-subtle`.
+Depth comes from **tonal layers and hairlines, not shadows**. The light page is gray, cards are white with a 1px `border`, and nested elements use `surface-subtle`.
 
 Shadows are reserved for things that **float**: dropdown menus, popovers, select lists, toasts, dialogs and the sticky composer. They all use one soft shadow, `shadow-float`: `0 12px 32px rgb(20 20 20 / 0.10), 0 2px 6px rgb(20 20 20 / 0.06)`. Cards never have shadows. Modal overlays dim the page with 30% black and no blur.
 
@@ -292,7 +294,7 @@ Don't mix sharp and rounded corners in one view, and don't round single-sided bo
 
 Every component is a shadcn/ui component restyled through tokens. Import from `@/components/ui/*` and `@/components/fork/*`. Never hand-roll a button, card or badge.
 
-- **Buttons:** **Every button is black by default.** Use `default` (black, `#141414` with off-white text) for any action unless there's a specific reason for another variant. A button that stands alone is always black. In dark mode the same variant inverts to light ink (`#F1F1EE` with ink text) so it stays visible. There is **one size, 40px tall** with a 10px radius, 16px side padding and 14px/500 text. Icon-only buttons are 40×40. The variants are:
+- **Buttons:** **Every button is black by default.** Use `default` (black, `#111111` with white text) for any action unless there's a specific reason for another variant. A button that stands alone is always black. In dark mode the same variant inverts to light ink (`#F1F1EE` with ink text) so it stays visible. There is **one size, 40px tall** with a 10px radius, 16px side padding and 14px/500 text. Icon-only buttons are 40×40. The variants are:
   - `default`: black. The default for every button, such as Continue, Apply, Review, Open site, Tell me more or Run check.
   - `outline`: only for the secondary action placed next to a black button, such as Cancel or Site dashboard. Never on its own.
   - `ghost`: low-emphasis actions such as Skip, Undo or Discuss.
@@ -301,9 +303,11 @@ Every component is a shadcn/ui component restyled through tokens. Import from `@
   - `link`: inline text actions.
 
   `sm` and `lg` deliberately resolve to 40px. `icon-sm` (32px) is only for close (×) and overflow (⋯) affordances inside cards and menus.
+
+  Text buttons can fill the available width of their parent frame when the layout calls for it. Use Fill container in Figma or `w-full` on the existing `Button` in code. Keep the component’s height, horizontal padding, and radius. Preserve existing button widths when applying the design system to a screen.
 - **Cards:** 16px radius, 1px border, surface fill, 24px padding, no shadow. Use `CardHeader` (title, description and an optional `CardAction` on the right), `CardContent` and `CardFooter`. **Footer actions sit bottom-right**, with the secondary action on the left and the primary on the right.
 - **Inputs:** 40px tall, 10px radius, surface fill and a 1px border. Focus turns the border ink and adds a 3px soft ring. Invalid fields get a red border, with red helper text below.
-- **Selection controls:** Checkbox and radio are drawn in ink. The **switch is 40×22: orange when on, warm gray when off**, with a white thumb.
+- **Selection controls:** Checkbox and radio are drawn in ink. The **switch is 40×22: orange when on, gray when off**, with a white thumb.
 - **Badges:** 24px tall with a 6px radius. Gray by default. The `brand` variant (tint fill and line border) is only for Live, Done, Active and Needs approval. Status color comes from a 6px dot, never from colored text.
 - **Tabs:** There are three styles:
   - **Segmented** (default): a gray track with the active item raised on the surface. Use it to switch views.
@@ -313,7 +317,7 @@ Every component is a shadcn/ui component restyled through tokens. Import from `@
 - **Tooltips:** An ink background with page-colored 12px text.
 - **Toasts:** Floating surface with a title, one line of description and an optional Undo.
 - **Progress:** An 8px-tall track. The fill is ink for usage and orange for work in progress.
-- **Skeletons:** Warm `skeleton` bars with a 6px radius.
+- **Skeletons:** Gray `skeleton` bars with a 6px radius.
 
 ## Agent patterns
 
