@@ -142,7 +142,7 @@ export default function GuidePage() {
               Orange when it matters.
             </h1>
             <p className="max-w-xl text-muted-foreground">
-              Soft warm grays and ink do almost all the work. Fork orange{" "}
+              Neutral grays and ink do almost all the work. Fork orange{" "}
               <code className="font-mono text-[13px] text-foreground">#FA4F20</code> appears only
               where something is on, approved, live, or waiting on you. Built on shadcn/ui (Radix,
               Vega spacing) with Geist.
@@ -455,7 +455,7 @@ export default function GuidePage() {
             </Panel>
           </Section>
 
-          <Section id="feedback" title="Feedback" lead="Progress in orange, loading with warm skeletons, empty states that invite action.">
+          <Section id="feedback" title="Feedback" lead="Progress in orange, loading with gray skeletons, empty states that invite action.">
             <div className="grid gap-4 md:grid-cols-2">
               <Panel className="flex flex-col gap-5">
                 <div className="flex flex-col gap-2">

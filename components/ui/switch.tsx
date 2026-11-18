@@ -6,7 +6,7 @@ import { Switch as SwitchPrimitive } from "radix-ui"
 
 /**
  * Fork switch: 40×22 track. On = brand orange with a white thumb.
- * Off = warm gray track (visible in both themes).
+ * Off = gray track (visible in both themes).
  */
 function Switch({
   className,

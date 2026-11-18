@@ -4,14 +4,15 @@
  */
 export const colorTokens = {
   neutrals: [
-    { name: "background", light: "#F1F1EE", dark: "#121211", use: "Page" },
-    { name: "card", light: "#FAFAF9", dark: "#1A1A19", use: "Cards, inputs, popovers" },
-    { name: "muted", light: "#F3F3F1", dark: "#222220", use: "Chips, subtle fills" },
-    { name: "accent", light: "#EBEBE7", dark: "#2A2A27", use: "Hover and selected rows" },
-    { name: "skeleton", light: "#E0E0DD", dark: "#2E2E2B", use: "Loading bars, off switch" },
-    { name: "border", light: "#E2E2DE", dark: "#2C2C29", use: "Hairlines" },
-    { name: "muted-foreground", light: "#666663", dark: "#A3A39E", use: "Secondary text" },
-    { name: "foreground", light: "#141414", dark: "#F1F1EE", use: "Ink: text, primary buttons" },
+    { name: "background", light: "#F0F0F0", dark: "#121211", use: "Page" },
+    { name: "card", light: "#FFFFFF", dark: "#1A1A19", use: "Cards, inputs, popovers" },
+    { name: "sidebar", light: "#FAFAFA", dark: "#1A1A19", use: "Workspace navigation" },
+    { name: "muted", light: "#F5F5F5", dark: "#222220", use: "Chips, subtle fills" },
+    { name: "accent", light: "#F5F5F5", dark: "#2A2A27", use: "Hover and selected rows" },
+    { name: "skeleton", light: "#E0E0E0", dark: "#2E2E2B", use: "Loading bars, off switch" },
+    { name: "border", light: "#E0E0E0", dark: "#2C2C29", use: "Hairlines" },
+    { name: "muted-foreground", light: "#6A6A6A", dark: "#A3A39E", use: "Secondary text" },
+    { name: "foreground", light: "#111111", dark: "#F1F1EE", use: "Ink: text, primary buttons" },
   ],
   accent: [
     { name: "brand", light: "#FA4F20", dark: "#FA4F20", use: "On, approved, live, waiting on you" },

@@ -1,6 +1,6 @@
 # Fork Design
 
-The design system for **Fork**, the self-driving website platform. It's calm warm grays, ink text, and one orange accent (`#FA4F20`) used only where something is on, approved, live, or waiting on you.
+The design system for **Fork**, the self-driving website platform. It's neutral grays, ink text, and one orange accent (`#FA4F20`) used only where something is on, approved, live, or waiting on you.
 
 **Buttons are black by default.** A plain `<Button>` is black; other variants are used only for a reason (outline for the secondary next to it, brand to approve).
 
