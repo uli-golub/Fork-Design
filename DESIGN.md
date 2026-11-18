@@ -303,6 +303,8 @@ Every component is a shadcn/ui component restyled through tokens. Import from `@
   - `link`: inline text actions.
 
   `sm` and `lg` deliberately resolve to 40px. `icon-sm` (32px) is only for close (×) and overflow (⋯) affordances inside cards and menus.
+
+  Text buttons can fill the available width of their parent frame when the layout calls for it. Use Fill container in Figma or `w-full` on the existing `Button` in code. Keep the component’s height, horizontal padding, and radius. Preserve existing button widths when applying the design system to a screen.
 - **Cards:** 16px radius, 1px border, surface fill, 24px padding, no shadow. Use `CardHeader` (title, description and an optional `CardAction` on the right), `CardContent` and `CardFooter`. **Footer actions sit bottom-right**, with the secondary action on the left and the primary on the right.
 - **Inputs:** 40px tall, 10px radius, surface fill and a 1px border. Focus turns the border ink and adds a 3px soft ring. Invalid fields get a red border, with red helper text below.
 - **Selection controls:** Checkbox and radio are drawn in ink. The **switch is 40×22: orange when on, gray when off**, with a white thumb.
